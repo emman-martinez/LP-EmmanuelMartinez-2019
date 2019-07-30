@@ -1,0 +1,13 @@
+.rousie {
+    background: #E10098;
+}
+
+.white {
+    color: white;
+}
+
+.container {
+    width: 85%;
+    max-width: 850px;
+    margin: 0 auto;
+}

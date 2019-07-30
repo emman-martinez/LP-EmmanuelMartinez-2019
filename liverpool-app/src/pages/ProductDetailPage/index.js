@@ -41,8 +41,10 @@ class ProductDetailPage extends Component {
     }
 
     render() {
-        const { product } = this.state;
+        const { product, record } = this.state;
         console.log(product.records);
+        //console.log(product.records['0']);
+        //console.log(record['sku.color']);
         //console.log(Object.keys(product.records));
         return (
             <Main>
