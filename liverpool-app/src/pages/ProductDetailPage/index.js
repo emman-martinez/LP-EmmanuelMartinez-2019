@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Main from './../../templates/Main'; 
 import Description from '../../components/ProductDescription';
 import Images from '../../components/ProductImages';
+import Added from '../../components/ProductAdded';
 import axios from 'axios';
 
 class ProductDetailPage extends Component {
@@ -58,22 +59,23 @@ class ProductDetailPage extends Component {
         //console.log(principalImage);
 
         return (
-            <Main>
-                <Images
-                    principalImage={principalImage}
-                    secondImage={secondImage}
-                    thirdImage={thirdImage}
-                    fourthImage={fourthImage}
-                />
-                <Description
-                    title={productDisplayName}
-                    id={productId}
-                    rating={rating}
-                    productPrice={productPrice}
-                    promoPrice={promoPrice}
-                    color={color}
-                    dimensions={dimensions}
-                />
+            <Main>  
+                    <Images
+                        principalImage={principalImage}
+                        secondImage={secondImage}
+                        thirdImage={thirdImage}
+                        fourthImage={fourthImage}
+                    />
+                    <Description
+                        title={productDisplayName}
+                        id={productId}
+                        rating={rating}
+                        productPrice={productPrice}
+                        promoPrice={promoPrice}
+                        color={color}
+                        dimensions={dimensions}
+                    />    
+                    <Added/>   
             </Main>
         );
     }
