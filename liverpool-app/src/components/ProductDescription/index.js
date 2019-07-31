@@ -11,13 +11,19 @@ const Description = (props) => (
             title={props.title}
             id={props.id}
         />
-        <Rating/>
+        <Rating
+            rating={props.rating}
+        />
         <Price
             productPrice={props.productPrice}
-            sortPrice={props.sortPrice}
+            promoPrice={props.promoPrice}
         />
-        
-        <Features/>
+        <Color
+            color={props.color}
+        />
+        <Features
+            dimensions={props.dimensions}
+        />
     </div>
 )
 

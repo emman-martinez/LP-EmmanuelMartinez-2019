@@ -1,10 +1,10 @@
 import React from 'react';
 import './price.css';
 
-const Price = ( { productPrice, sortPrice } ) => (
+const Price = ( { productPrice, promoPrice } ) => (
     <div className="product-price">
-        <h5>{productPrice}</h5>
-        <h4>{sortPrice}</h4>
+        <div>Precio: {productPrice}</div>
+        <div>Precio Promo: {promoPrice}</div>
     </div>
 )
 

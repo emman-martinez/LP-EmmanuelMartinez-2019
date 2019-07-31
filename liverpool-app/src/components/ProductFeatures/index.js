@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Features = () => (
-    <div>Features</div>
+const Features = ( { dimensions } ) => (
+    <div>Tamaño: {dimensions}</div>
 )
 
 export default Features;

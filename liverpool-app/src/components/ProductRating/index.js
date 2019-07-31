@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Rating = () => (
-    <div>Rating</div>
+const Rating = ( { rating } ) => (
+    <div>Estrellas: {rating}</div>
 )
 
 export default Rating;

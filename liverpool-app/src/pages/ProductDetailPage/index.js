@@ -1,33 +1,34 @@
 import React, { Component } from 'react';
 import Main from './../../templates/Main'; 
 import Description from '../../components/ProductDescription';
+import Images from '../../components/ProductImages';
 import axios from 'axios';
 
 class ProductDetailPage extends Component {
 
     state = {
         product: {},
+        record: [],
+        images: [],
         cargando: false 
     }
 
     componentDidMount() {
-        console.log("¡Estoy Listo XD!");
-        // ***** Realizar consulra con Axios a la API
-        const url = `https://www.liverpool.com.mx/tienda/pdp/consola-playstation-4-days-of-play-1-tb/1084706741?s=1084706741&d3106047a194921c01969dfdec083925=json`;
-        
-        console.log(url);
+        console.log("¡Listo...!");
+        // ***** Realizar consulta con Axios a la API
+        this.getProduct();
+    }
 
-        axios.get(url)
+    getProduct = async () => {
+        const url = `https://www.liverpool.com.mx/tienda/pdp/consola-playstation-4-days-of-play-1-tb/1084706741?s=1084706741&d3106047a194921c01969dfdec083925=json`;
+        await axios.get(url)
             .then(respuesta => {
-            // console.log(respuesta);
+                // console.log(respuesta);
             const { data } = respuesta;
-                //console.log(data);
-                //console.log(data.contents);
-                //console.log(data.contents[0]);
-                //console.log(data.contents[0].mainContent);
-            console.log(data.contents[0].mainContent[0].record);
             this.setState({
                 product: data.contents[0].mainContent[0].record,
+                record: data.contents[0].mainContent[0].record.records[0],
+                images: data.contents[0].mainContent[0].record.records[0]['sku.galleriaImage'],
                 cargando: true
             }, () => {
                 // 3 Segundos despúes cambia a false
@@ -35,26 +36,43 @@ class ProductDetailPage extends Component {
                         this.setState({
                             cargando:false
                         })
-                    });
+                    },3000);
                 })
             });
     }
 
     render() {
-        const { product, record } = this.state;
-        console.log(product.records);
-        //console.log(product.records['0']);
-        //console.log(record['sku.color']);
-        //console.log(Object.keys(product.records));
+        
+        const { product, record, images } = this.state;
+        const { productDisplayName, productId, productPrice, promoPrice } = product; 
+        const rating = record['productAvgRating'];
+        const color = record['sku.color'];
+        const dimensions = record['sku.dimensions'];
+        const principalImage = record['largeImage'];
+        const secondImage = images[0];
+        const thirdImage = images[1];
+        const fourthImage = images[2];
+        //console.log(secondImage);
+        //console.log(thirdImage);
+        //console.log(fourthImage);
+        //console.log(principalImage);
+
         return (
             <Main>
-                <h1>ProductDetailPage</h1>
+                <Images
+                    principalImage={principalImage}
+                    secondImage={secondImage}
+                    thirdImage={thirdImage}
+                    fourthImage={fourthImage}
+                />
                 <Description
-                    title={product.productDisplayName}
-                    id={product.productId}
-                    productPrice={product.productPrice}
-                    sortPrice={product.sortPrice}
-                    //color={product.sku.color}
+                    title={productDisplayName}
+                    id={productId}
+                    rating={rating}
+                    productPrice={productPrice}
+                    promoPrice={promoPrice}
+                    color={color}
+                    dimensions={dimensions}
                 />
             </Main>
         );
