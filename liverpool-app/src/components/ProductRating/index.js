@@ -18,14 +18,19 @@ class Rating extends Component {
     render() {
         const { rating } = this.state;
         return (
-            <div>
-                <StarRatingComponent 
-                name="rate1" 
-                starCount={5}
-                value={rating}
-                onStarClick={this.onStarClick.bind(this)}
-                /> <a href="#"><u>3 opiniones</u></a>
-                <hr/>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-2"></div>
+                    <div className="col-md-3 product-title">
+                        <StarRatingComponent 
+                            name="rate1" 
+                            starCount={5}
+                            value={rating}
+                            onStarClick={this.onStarClick.bind(this)}
+                            /> <a href="#"><u>3 opiniones</u></a>
+                        <hr/>
+                    </div>
+                </div>
             </div>
         );
     }
