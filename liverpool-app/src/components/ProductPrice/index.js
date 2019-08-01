@@ -3,8 +3,9 @@ import './price.css';
 
 const Price = ( { productPrice, promoPrice } ) => (
     <div className="product-price">
-        <div>Precio: {productPrice}</div>
-        <div>Precio Promo: {promoPrice}</div>
+        <div className="productPrice"><strike>${productPrice}</strike></div>
+        <div className="promoPrice">${promoPrice}</div>
+        <hr/>
     </div>
 )
 

@@ -1,3 +1,9 @@
 .gray {
-    background: gray;
+    background-color: #474546;
+}
+
+h5,
+p,
+a {
+    color: white;
 }

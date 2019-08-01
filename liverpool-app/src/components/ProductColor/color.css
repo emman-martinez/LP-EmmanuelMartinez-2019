@@ -1,0 +1,18 @@
+.a {
+    display: block;
+    border: 1px solid #87888a;
+    background-color: #87888a;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    height: 22px;
+    /* vertical-align: middle; */
+    position: relative;
+    width: 22px;
+}
+
+.color {
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: none;
+}

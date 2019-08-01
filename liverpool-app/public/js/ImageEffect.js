@@ -15,10 +15,9 @@ $(document).ready(function() {
                 var url = "https://ss423.liverpool.com.mx/lg/1084706741.jpg";
             }
             $("#vistaPrevia").attr('src', url);
-            //$("#lblColor").text(color);
         });
 
-        $('.zoom').hover(function() {
+        $(".zoom").hover(function() {
             $(this).addClass('transition');
         }, function() {
             $(this).removeClass('transition');

@@ -3,10 +3,8 @@ import './images.css';
 
 const Images = (props) => (
     <div className="container">
-        <h1>PlayStation</h1>
-        <hr/>
         <div className="row">
-            <div className="col-sm-2">
+            <div className="col-md-2">
                 <div className="panel">
                     <div className="panel-body">
                         <img className="imgThumb img-thumbnail" data-color="uno" src={props.secondImage} alt=""/>
@@ -20,7 +18,7 @@ const Images = (props) => (
                 </div>
             </div>
         </div>
-        <div className="col-sm-5">
+        <div className="col-md-5">
             <section className="panel">
                 <div className="panel-body"> 
                     <img id="vistaPrevia" className="size zoom" src={props.principalImage}/>

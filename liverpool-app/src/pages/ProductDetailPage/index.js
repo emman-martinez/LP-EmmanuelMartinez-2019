@@ -21,10 +21,10 @@ class ProductDetailPage extends Component {
     }
 
     getProduct = async () => {
-        const url = `https://www.liverpool.com.mx/tienda/pdp/consola-playstation-4-days-of-play-1-tb/1084706741?s=1084706741&d3106047a194921c01969dfdec083925=json`;
+        const url = 'https://www.liverpool.com.mx/tienda/pdp/consola-playstation-4-days-of-play-1-tb/1084706741?s=1084706741&d3106047a194921c01969dfdec083925=json';
         await axios.get(url)
             .then(respuesta => {
-                // console.log(respuesta);
+                console.log(respuesta);
             const { data } = respuesta;
             this.setState({
                 product: data.contents[0].mainContent[0].record,
@@ -45,6 +45,9 @@ class ProductDetailPage extends Component {
     render() {
         
         const { product, record, images } = this.state;
+        console.log(product);
+        console.log(record);
+        console.log(images);
         const { productDisplayName, productId, productPrice, promoPrice } = product; 
         const rating = record['productAvgRating'];
         const color = record['sku.color'];
@@ -60,22 +63,40 @@ class ProductDetailPage extends Component {
 
         return (
             <Main>  
-                    <Images
+                    {/*<Images
                         principalImage={principalImage}
                         secondImage={secondImage}
                         thirdImage={thirdImage}
                         fourthImage={fourthImage}
-                    />
-                    <Description
-                        title={productDisplayName}
-                        id={productId}
-                        rating={rating}
-                        productPrice={productPrice}
-                        promoPrice={promoPrice}
-                        color={color}
-                        dimensions={dimensions}
-                    />    
-                    <Added/>   
+                    />*/}
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-5">
+                                <Images
+                                    principalImage={principalImage}
+                                    secondImage={secondImage}
+                                    thirdImage={thirdImage}
+                                    fourthImage={fourthImage}
+                                />
+                            </div>
+                            <div className="col-md-1"></div>
+                            <div className="col-md-3">
+                                <Description
+                                    title={productDisplayName}
+                                    id={productId}
+                                    rating={rating}
+                                    productPrice={productPrice}
+                                    promoPrice={promoPrice}
+                                    color={color}
+                                    dimensions={dimensions}
+                                />   
+                            </div>
+                            <div className="col-md-3">
+                                <Added/>
+                            </div>
+                        </div> 
+                    </div>
+                    
             </Main>
         );
     }

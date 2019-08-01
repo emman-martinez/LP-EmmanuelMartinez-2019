@@ -1,7 +1,14 @@
 import React from 'react';
+import './color.css';
 
 const Color = ( {color} ) => (
-    <div className="product-color">Color: {color}</div>
+    <div className="">
+        <div className="color">Color: {color}</div>
+        <a className="a" href=""></a>
+        <hr/>
+    </div>
+    
+    
 )
 
 export default Color;

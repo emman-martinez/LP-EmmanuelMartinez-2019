@@ -1,0 +1,13 @@
+.promoPrice {
+    color: #f00;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 3px 0;
+}
+
+.productPrice {
+    color: #81898b;
+    font-size: 15px;
+    text-decoration: line-through;
+    clear: both;
+}
