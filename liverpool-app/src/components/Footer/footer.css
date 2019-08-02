@@ -2,8 +2,12 @@
     background-color: #474546;
 }
 
-h5,
+h4,
 p,
 a {
     color: white;
+}
+
+.margen {
+    margin-top: 30px;
 }

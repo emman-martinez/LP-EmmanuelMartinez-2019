@@ -15,7 +15,7 @@ class ProductDetailPage extends Component {
     }
 
     componentDidMount() {
-        console.log("¡Listo...!");
+        // console.log("¡Listo...!");
         this.getProduct(); // ***** Llamada de función para consumo de API con axios
     }
 
@@ -53,13 +53,6 @@ class ProductDetailPage extends Component {
         const secondImage = images[0];
         const thirdImage = images[1];
         const fourthImage = images[2];
-        // console.log(product);
-        // console.log(record);
-        // console.log(images);
-        // console.log(secondImage);
-        // console.log(thirdImage);
-        // console.log(fourthImage);
-        // console.log(principalImage);
 
         return (
             <Main>  
@@ -88,19 +81,6 @@ class ProductDetailPage extends Component {
                         <Added/>
                     </div>
                 </div>
-                
-                   
-                
-                {/* <div className="col-md-1">
-                    
-
-                </div>
-                <div className="col-md-1">
-                    
-                </div>
-                <div className="col-md-1">
-                    <Added/>
-                </div> */}
             </Main>
         );
     }
