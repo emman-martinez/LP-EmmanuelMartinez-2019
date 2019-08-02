@@ -28,19 +28,19 @@ class Added extends Component {
     asignarCarrito = (e) => {
         // ***** Prevenir el default
         e.preventDefault();
-        console.log("Formulario Carrito");
+        // console.log("Formulario Carrito");
         // ***** Crear el objeto con los datos
         const cantProducto = this.cantidadProducto.current.value;
-        console.log(cantProducto);
+        // console.log(cantProducto);
 
         if (cantProducto > 2) {
-            console.log('Producto agregado correctamente');
+            // console.log('Producto agregado correctamente');
             this.setState({
                 cantProducto,
             })
             //resultado = <div><h4>Producto Agregado Correctamente</h4></div>
         } else {
-            console.log('La cantidad del producto tiene que ser mayor a 2');
+            // console.log('La cantidad del producto tiene que ser mayor a 2');
             this.setState({
                 cantProducto,
             })
